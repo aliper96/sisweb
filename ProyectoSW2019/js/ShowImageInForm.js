@@ -17,6 +17,7 @@ $(document).ready(function () {
         console.log(e.target.result);
 
       }
+      
       reader.readAsDataURL(this.files[0]);
     }
   });

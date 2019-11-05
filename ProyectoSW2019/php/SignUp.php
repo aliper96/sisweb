@@ -113,6 +113,7 @@
 
     if (ValidateRegisterPHP($email, $password, $passwordr, $nombre, $tipo)) {
 
+      
       if (isset($_FILES["myfiler"]) && !empty($_FILES["myfiler"]["name"])) {
         $target = addslashes(file_get_contents($_FILES['myfiler']['tmp_name']));
         move_uploaded_file($target, $_FILES['myfiler']['name']);

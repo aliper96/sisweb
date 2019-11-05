@@ -26,6 +26,7 @@
       $complejidad = $_POST['nivel'];
       //$target = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
 
+      
       //move_uploaded_file($target, $_FILES['myfile']['name']);
 
       if (ValidateFieldsPHP($email, $pregunta, $respc, $resp1, $resp2, $resp3, $tema, $complejidad)) {

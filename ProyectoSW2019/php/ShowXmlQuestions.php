@@ -25,6 +25,7 @@
         die("");
 
       }
+      
 
     echo "<table border='2'><tr><th>ENUNCIADO</th><th>RESPUESTA CORRECTA</th><th>RESPUESTAS INCORRECTAS</th><th>TEMA</th></tr>";
     foreach ($xml->children() as $assessmentItem) {

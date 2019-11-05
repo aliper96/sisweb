@@ -36,7 +36,8 @@
         <br><br>
         Temática de la pregunta: <br><input type="text" name="tema" size="75">
         <span class="error">*</span>
-        <br><br>       
+        <br><br>    
+           
         Complejidad de la pregunta :
         <select name= "nivel" id= "nivel" >
           <option value="1">Baja</option>

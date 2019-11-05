@@ -11,6 +11,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
+    
       <h3>Introduce tus datos</h3>
       <br>
 

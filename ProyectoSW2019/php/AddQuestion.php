@@ -7,6 +7,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
+    
       <?php 
         require_once('DbConfig.php');
         $conexion = mysqli_connect($server, $user, $pass, $basededatos);

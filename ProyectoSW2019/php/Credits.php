@@ -12,6 +12,7 @@
       <br><br><br><br><br>
       <table style="width: 100%" >
             <tr>
+            
                 <th><img src="../images/ali.png" alt="Avatar" width="128"></th>
                 <th><img src="../images/gorka.png" alt="Avatar" width="128"></th>
             </tr>

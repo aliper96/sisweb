@@ -16,6 +16,7 @@
       if ($row['foto'] != "") {
         echo "<div><img height='150' width='150' with  src='data:image/;base64," . base64_encode($row['foto']) . "'/></div>";
       }
+      
     } else {
       echo "<span class='right'><a href='SignUp.php'>Registro</a></span>";
       echo " ";

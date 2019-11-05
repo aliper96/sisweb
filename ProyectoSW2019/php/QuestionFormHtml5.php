@@ -21,6 +21,7 @@
         Respuesta correcta: <br><input type="text" name="respc" size="75" required>
         <span class="error">*</span>  
         <br><br>
+        
         Respuesta incorrecta 1: <br><input type="text" name="resp1" size="75" required>
         <span class="error">*</span>
         <br><br>

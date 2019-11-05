@@ -19,6 +19,7 @@
 
       <?php 
         $email;
+        
         if(isset($_GET["email"])){
           $email = $_GET["email"];
           echo"<form id='fquestion' method='post' name='fquestion' action='AddQuestionWithImage.php?email=$email' enctype='multipart/form-data'>";

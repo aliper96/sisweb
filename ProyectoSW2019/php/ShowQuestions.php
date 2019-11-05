@@ -17,6 +17,7 @@
 
         echo "<table border='1'> <tr> <th>Autor</th> <th>Enunciado</th> <th>Respuesta</th> </tr>";
 
+        
         while($row = $result->fetch_assoc()){
           if($row['foto']==""){
             echo "<tr> <td>".$row['email']."</td> <td>".$row['pregunta']."</td> <td>".$row['correcta']."</td> </tr>";               
