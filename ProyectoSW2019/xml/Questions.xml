@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItems>
+	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Tag HTML para añadir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> OBJECT </value>
+			<value> TABLE </value>
+			<value> DIV </value>
+		</incorrectResponses>
+	</assessmentItem>
+		<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> HTTP </value>
+			<value> SMTP </value>
+			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+<assessmentItem complexity="1" subject="qwre" author="qwerqwer@ehu.es"><itemBody><p>creador de gorkoloco</p></itemBody><correctResponse><value>ewqr</value></correctResponse><incorrectResponses><value>qwre</value><value>qwre</value><value>rweq</value></incorrectResponses></assessmentItem><assessmentItem complexity="1" subject="rwqerwqerwqerwqerq" author="pruebaa@ehu.es"><itemBody><p>creador de gorkoloco</p></itemBody><correctResponse><value>qwerqwe</value></correctResponse><incorrectResponses><value>wqerwqerqw</value><value>qwerqwer</value><value>erwqerwqerwqe</value></incorrectResponses></assessmentItem></assessmentItems>
