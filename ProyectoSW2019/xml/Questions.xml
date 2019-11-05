@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ShowXmlQuestions.xsl"?>
 <assessmentItems>
 	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
 		<itemBody>
@@ -15,7 +16,7 @@
 			<value> DIV </value>
 		</incorrectResponses>
 	</assessmentItem>
-		<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+	<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
 		<itemBody>
 			<p>Este protocolo acabará funcionando
 			incluso entre dos latas unidas por un cordón</p>
@@ -31,4 +32,56 @@
 			<value> Ninguna es correcta </value>
 		</incorrectResponses>
 	</assessmentItem>
-<assessmentItem complexity="1" subject="qwre" author="qwerqwer@ehu.es"><itemBody><p>creador de gorkoloco</p></itemBody><correctResponse><value>ewqr</value></correctResponse><incorrectResponses><value>qwre</value><value>qwre</value><value>rweq</value></incorrectResponses></assessmentItem><assessmentItem complexity="1" subject="rwqerwqerwqerwqerq" author="pruebaa@ehu.es"><itemBody><p>creador de gorkoloco</p></itemBody><correctResponse><value>qwerqwe</value></correctResponse><incorrectResponses><value>wqerwqerqw</value><value>qwerqwer</value><value>erwqerwqerwqe</value></incorrectResponses></assessmentItem></assessmentItems>
+	<assessmentItem complexity="1" subject="qwre" author="qwerqwer@ehu.es">
+		<itemBody>
+			<p>Cuantos creditos vale esta asignatura</p>
+		</itemBody>
+		<correctResponse>
+			<value>6</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>1</value>
+			<value>2</value>
+			<value>10</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="1" subject="rwqerwqerwqerwqerq" author="pruebaa@ehu.es">
+		<itemBody>
+			<p>Pregunta prueba</p>
+		</itemBody>
+		<correctResponse>
+			<value>d</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> a</value>
+			<value>b</value>
+			<value>c</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="1" subject="qwe" author="asdfasdf@ehu.es">
+		<itemBody>
+			<p>Cual es la mejor asignatura</p>
+		</itemBody>
+		<correctResponse>
+			<value>Ninguna</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>SW</value>
+			<value>Seguridad</value>
+			<value>PF</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem complexity="1" subject="cosas raras" author="prueba@ehu.es">
+		<itemBody>
+			<p>Cuantas maravillas hay en el mundo </p>
+		</itemBody>
+		<correctResponse>
+			<value>7</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>8</value>
+			<value>3</value>
+			<value>yo</value>
+		</incorrectResponses>
+	</assessmentItem>
+</assessmentItems>
