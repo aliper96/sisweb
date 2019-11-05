@@ -12,7 +12,6 @@
       <br><br><br><br><br>
       <table style="width: 100%" >
             <tr>
-            
                 <th><img src="../images/ali.png" alt="Avatar" width="128"></th>
                 <th><img src="../images/gorka.png" alt="Avatar" width="128"></th>
             </tr>
@@ -25,8 +24,9 @@
                 <td align="center">Computación</td>
             </tr>
             <tr>
-                <td align="center">ahamza002@ikasle.ehu.eus</td>
-                <td align="center">glucero001@ikasle.ehu.eus</td>
+                <td align="center"><a href="mailto:ahamza002@ikasle.ehu.eus">ahamza002@ikasle.ehu.eus</a></td>
+                <td align="center"><a href="mailto:glucero001@ikasle.ehu.eus">glucero001@ikasle.ehu.eus</a></td>
+
             </tr>
 
         </table>

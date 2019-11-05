@@ -7,7 +7,6 @@ if ($local==1){
     $basededatos="quiz";
 }
 else{
-    
     $server="localhost";
     $user="id8136028_root";
     $pass="gorkoloco";

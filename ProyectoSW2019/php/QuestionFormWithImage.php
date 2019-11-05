@@ -19,7 +19,6 @@
 
       <?php 
         $email;
-        
         if(isset($_GET["email"])){
           $email = $_GET["email"];
           echo"<form id='fquestion' method='post' name='fquestion' action='AddQuestionWithImage.php?email=$email' enctype='multipart/form-data'>";
@@ -59,7 +58,7 @@
         </select>
         <span class="error">* </span>
         <br><br>
-        <input type="file" name='myfile' id="my_file"> <input type="submit" name="submit" value="Enviar pregunta">
+        <input type="file" accept="image/" name='myfile' id="my_file"> <input type="submit" name="submit" value="Enviar pregunta">
         <div id="foto" class="fotoo"><img id="ftt" src="" alt="your image" onerror="this.style.visibility='hidden'" height="140" width="150" /></div>
         <br><br>
         <br><br>

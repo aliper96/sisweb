@@ -16,7 +16,6 @@
       if ($row['foto'] != "") {
         echo "<div><img height='150' width='150' with  src='data:image/;base64," . base64_encode($row['foto']) . "'/></div>";
       }
-      
     } else {
       echo "<span class='right'><a href='SignUp.php'>Registro</a></span>";
       echo " ";
@@ -36,6 +35,10 @@
       echo "<span><a href='Credits.php?email=$email'>Creditos</a></span>";
       echo "<span><a href='QuestionFormWithImage.php?email=$email'> Insertar Pregunta</a></span>";
       echo "<span><a href='ShowQuestionsWithImage.php?email=$email'> Ver Preguntas</a></span>";
+      echo "<span><a href='ShowXmlQuestions.php?email=$email'> Ver Preguntas Xml</a></span>";
+      echo "<span><a href='../html/GetUserInfo.html'> Get User Info</a></span>";
+
+
     } else {
       echo "<span><a href='Layout.php'>Inicio</a></span>";
       echo "<span><a href='Credits.php'>Creditos</a></span>";

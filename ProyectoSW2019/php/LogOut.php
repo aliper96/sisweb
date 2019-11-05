@@ -14,7 +14,6 @@ window.onload=alertredirect('HASTA PRONTO');
     <?php include '../html/Head.html' ?>
 </head>
 
-
 <body>
 
     <?php include '../php/Menus.php' ?>

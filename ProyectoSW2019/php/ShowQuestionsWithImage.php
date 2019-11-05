@@ -31,7 +31,6 @@
             " </td> <td> <img height='100px'  src='data:image/;base64," . base64_encode($row['foto']) . "'/></td> </tr>";
         }
       }
-      
 
       echo "</table>";
 

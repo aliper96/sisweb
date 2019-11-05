@@ -11,7 +11,6 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-    
       <h3>Introduce tus datos</h3>
       <br>
 
@@ -54,12 +53,9 @@ if (isset($_POST['enviar'])) {
   $sql = "SELECT email,contrasena FROM usuarios where email ='$email' ";
   $result = $conexion->query($sql);
   $row = mysqli_fetch_array($result);
-  if ($password == $row['contrasena']) {
+  if (($password == $row['contrasena']) && ($email == $row['email']) && (!empty($email) && !empty($password))) {
 
     alertredirect("Bienvenido " . $email . "!", $email);
-    //header("Location:login.php?email=" . urlencode($email));
-    
-    // header("Location:registro.php");
     
   } else {
     alert("Parametros incorrectos");

@@ -31,7 +31,7 @@
         <br><br>
         Repetir contraseña*: <br><input id="input_passwordr" name="passwordr" size="75" type="password">
         <br><br>
-        <input type="file" name='myfiler' id="my_file"> <input type="submit" name="submit" value="Registrarse">
+        <input type="file" accept="image/" name='myfiler' id="my_file"> <input type="submit" name="submit" value="Registrarse">
         <div id="foto" class="fotoo"><img id="ftt" src="" alt="your image" onerror="this.style.visibility='hidden'" height="140" width="150" /></div>
 
       </form>
@@ -59,6 +59,12 @@
         return false;
       }
 
+      if (($tipo == 1 && preg_match("/((^[a-zA-Z]+)\.?([a-zA-Z]*)@ehu\.(eus|es))$/", $email) == 1)
+        ||($tipo == 2 && preg_match("/((^[a-zA-Z]+)([0-9]{3})@ikasle\.ehu\.(eus|es))$/", $email) == 1)) {
+        alert("Error, el servidor dice que el email no concuerda con el tipo de usuario.");
+        return false;
+      }
+
       if (preg_match("/.{6,}$/", $password) == 0) {
         alert("Error, el servidor dice que las contraseñas son cortas (min. 6 caracteres).");
         return false;
@@ -69,7 +75,7 @@
         return false;
       }
 
-      if (preg_match("/([a-zA-Z0-9]*\s?){2,}$/", $nombre) == 0) {
+      if (preg_match("/^[A-Za-z]+(\s[A-Za-z]+){1,}$/", $nombre) == 0) {
         alert("Error, el servidor dice que tiene que haber al menos 2 palabras.");
         return false;
       }
@@ -95,26 +101,15 @@
     $passwordr = $_POST['passwordr'];
     $tipo = $_POST['tipo'];
 
-    /*if (isset($_FILES["myfiler"]) && !empty($_FILES["myfiler"]["name"])) {
-      $target = addslashes(file_get_contents($_FILES['myfiler']['tmp_name']));
-      move_uploaded_file($target, $_FILES['myfiler']['name']);
-    }*/
-    /*
-    print_r($email);
-    echo '<br/>';
-
-    print_r($nombre);
-    echo '<br/>';
-
-    print_r($password);
-    echo '<br/>';
-
-    print_r($tipo);*/
-
     if (ValidateRegisterPHP($email, $password, $passwordr, $nombre, $tipo)) {
 
-      
       if (isset($_FILES["myfiler"]) && !empty($_FILES["myfiler"]["name"])) {
+        $info = getimagesize($_FILES['myfiler']['tmp_name']);
+        if ($info === FALSE) {
+          alert( "No es una Imagen");
+                     die("");
+
+        }
         $target = addslashes(file_get_contents($_FILES['myfiler']['tmp_name']));
         move_uploaded_file($target, $_FILES['myfiler']['name']);
 

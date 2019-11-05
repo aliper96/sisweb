@@ -26,17 +26,32 @@
       $complejidad = $_POST['nivel'];
       //$target = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
 
-      
       //move_uploaded_file($target, $_FILES['myfile']['name']);
 
       if (ValidateFieldsPHP($email, $pregunta, $respc, $resp1, $resp2, $resp3, $tema, $complejidad)) {
 
+
         if (strlen($_FILES['myfile']['tmp_name']) != 0) {
+          
+          $info = getimagesize($_FILES['myfile']['tmp_name']);
+          if ($info === FALSE) {
+            echo "No es una Imagen";
+            echo"<br>";
+             echo "<a href='javascript:window.history.go(-1)'>Vuelve atras para revisar la pregunta</a>";
+             die("");
+
+          }
+
+          insert_in_xml($email, $pregunta, $respc, $resp1, $resp2, $resp3, $tema, $complejidad);
+
+
           $target = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
           move_uploaded_file($target, $_FILES['myfile']['name']);
 
           $sql = "INSERT INTO preguntas(id, email, pregunta, correcta, incorrecta1, incorrecta2, incorrecta3, tematica, complejidad, foto) 
                 VALUES(NULL, '$email', '$pregunta', '$respc', '$resp1', '$resp2', '$resp3', '$tema', '$complejidad','$target')";
+
+          
 
           if ($conexion->query($sql) === TRUE) {
             echo "Operación realizada, la pregunta se ha guardado correctamente en la BD. <br>";
@@ -80,6 +95,34 @@
 
         return true;
       }
+      function insert_in_xml($email, $ques, $respc, $resp1, $resp2, $resp3, $tema, $complejidad){
+        $use_errors = libxml_use_internal_errors(true);
+        $xml = simplexml_load_file('../xml/Questions.xml');
+       if (false === $xml) {
+          echo"No se encontro el archivo xml o no tienes permisos para abrirlo";
+          echo "<a href='javascript:window.history.go(-1)'>Vuelve atras</a>";
+          die("");
+
+        }
+        $pregunta = $xml->addChild('assessmentItem');
+        $pregunta->addAttribute('complexity', $complejidad);
+        $pregunta->addAttribute('subject', $tema );
+        $pregunta->addAttribute('author',$email);
+        $itembody = $pregunta->addChild( 'itemBody' );
+        $itembody->addChild('p',$ques);
+        $correctResponse  = $pregunta->addChild('correctResponse');
+        $correctResponse ->addChild('value',$respc);
+        $incorrectResponses  = $pregunta->addChild('incorrectResponses');
+        $incorrectResponses->addChild('value', $resp1);
+        $incorrectResponses->addChild('value', $resp2);
+        $incorrectResponses->addChild('value', $resp3);
+        $xml->asXML('../xml/Questions.xml');
+        echo'<script>alert("Se añadio la pregunta en el xml")</script>';
+        libxml_clear_errors();
+        libxml_use_internal_errors($use_errors);
+
+
+    }
 
       $conexion->close();
       ?>
