@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html>
+<?php
+$email =$_GET["email"];
+echo "<script type='text/javascript'> window.onload=alert('HASTA PRONTO')  ;  </script>";
 
-<head>
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <script>
-function alertredirect($mensaje)
-{
-     alert($mensaje); window.location.href = 'Layout.php'; 
-}
 
-window.onload=alertredirect('HASTA PRONTO');
-</script>
-    <?php include '../html/Head.html' ?>
-</head>
+echo "<script type='text/javascript'> window.location.href = 'DecreaseGlobalCounter.php?email=$email'; </script>";
+    
+?>
 
-<body>
-
-    <?php include '../php/Menus.php' ?>
-    <section class="main" id="s1">
-
-    </section>
-    <?php include '../html/Footer.html' ?>
-</body>
-
-</html>
 
 

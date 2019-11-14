@@ -3,7 +3,10 @@
 
 <head>
   <script src="../js/jquery-3.4.1.min.js"></script>
-
+  <!--<script type="text/javascript" src="../js/ValidateFieldsQuestion.js"></script> -->
+  <script type="text/javascript" src="../js/ShowImageInForm.js"></script>
+  <script type="text/javascript" src="../js/showQuestionsAjax.js"></script>
+  <script type="text/javascript" src="../js/addQuestionAjax.js"></script>
   <?php include '../html/Head.html' ?>
 </head>
 
@@ -54,9 +57,8 @@ if (isset($_POST['enviar'])) {
   $result = $conexion->query($sql);
   $row = mysqli_fetch_array($result);
   if (($password == $row['contrasena']) && ($email == $row['email']) && (!empty($email) && !empty($password))) {
-
-    alertredirect("Bienvenido " . $email . "!", $email);
-    
+    //alertredirect("Bienvenido " . $email . "!", $email);
+    echo "<script type='text/javascript'> window.location.href = 'IncreaseGlobalCounter.php?email=$email'; </script>";
   } else {
     alert("Parametros incorrectos");
   }

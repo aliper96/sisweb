@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <?php include '../html/Head.html' ?>
+<!--<?php include '../html/Head.html' ?>-->
   <style>
     .tabla {
       height: 500px;
@@ -12,9 +12,9 @@
 </head>
 
 <body>
-  <?php include '../php/Menus.php' ?>
-  <section class="main" id="s1">
-    <div align="center" class="tabla">
+<!-- <?php include '../php/Menus.php' ?>-->
+  <!--<section class="main" id="s1">-->
+    <div >
       <h2>PREGUNTAS ALMACENADAS EN EL XML</h2><br><br>
 
       <?php
@@ -51,8 +51,8 @@
     echo "</table>";
     ?>
     </div>
-  </section>
-  <?php include '../html/Footer.html' ?>
+  <!--</section>-->
+  <!-- <?php include '../html/Footer.html' ?>-->
 </body>
 
 </html>
