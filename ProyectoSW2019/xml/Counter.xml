@@ -1,9 +1,3 @@
 <?xml version="1.0"?>
-<usuarios contador="2">
-
-	
-
-	<user>
-		<p>gorka@ehu.es</p>
-	</user>
-<user><p>qqq@ehu.es</p></user></usuarios>
+<usuarios contador="0">
+</usuarios>

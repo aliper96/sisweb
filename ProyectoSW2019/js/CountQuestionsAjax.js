@@ -1,7 +1,7 @@
 $(document).ready(function bucle(event) {
-  
+
     mispreguntas = 0;
-     preguntas = 0;
+    preguntas = 0;
     var em = $("#em").val();
 
     $.ajax({
@@ -9,28 +9,23 @@ $(document).ready(function bucle(event) {
         url: '../xml/Questions.xml',
         cache: false,
         dataType: 'xml',
-        success: function(xml) {
-            setTimeout(function(){bucle(event);}, 10000);
-            var node = 'assessmentItem', 
-            mispreguntass =   $(xml).find(node).each(function()
-            {
-                var email  = $(this).attr('author');
-                if (email == em ){
-                    mispreguntas ++;
-                } 
-            }),
-            count = $(xml).find(node).length;
-            $("#preg").html(mispreguntas);
-            $("#total").html(count);
+        success: function (xml) {
+            setTimeout(function () { bucle(event); }, 10000);
+            var node = 'assessmentItem',
+                mispreguntass = $(xml).find(node).each(function () {
+                    var email = $(this).attr('author');
+                    if (email == em) {
+                        mispreguntas++;
+                    }
+                }),
+                count = $(xml).find(node).length;
+                $("#preg").html(mispreguntas + " / " + count)
+            //$("#preg").html(mispreguntas);
+            //$("#total").html(count);
         },
-        error: function(r) {
+        error: function (r) {
             console.error(r);
         }
     });
-
-
-
-
-
 
 });

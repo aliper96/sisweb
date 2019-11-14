@@ -51,7 +51,7 @@
 
       echo "<span><a href='Layout.php?email=$email'>Inicio</a></span>";
       echo "<span><a href='Credits.php?email=$email'>Creditos</a></span>";
-      echo "<span><a href='QuestionFormWithImage.php?email=$email'> Insertar Pregunta</a></span>";
+      //echo "<span><a href='QuestionFormWithImage.php?email=$email'> Insertar Pregunta</a></span>";
       //echo "<span><a href='ShowQuestionsWithImage.php?email=$email'> Ver Preguntas</a></span>";
       //echo "<span><a href='ShowXmlQuestions.php?email=$email'> Ver Preguntas Xml</a></span>";
       //echo "<span><a href='../xml/Questions.xml'> Ver Preguntas Xml (XSL)</a></span>";

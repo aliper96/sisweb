@@ -13,6 +13,9 @@ $(document).ready(function () {
         var urrl = "AddQuestionWithImage.php?email="+em;
         // Create an FormData object 
          var datos = new FormData(frm);
+      
+
+
         // process the form
         $.ajax({
 
@@ -24,7 +27,7 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             cache : false,
-            timeout: 800000,
+            timeout: 8000,
             dataType: "html", // what type of data do we expect back from the server
             success: function (data) {
               
@@ -33,11 +36,11 @@ $(document).ready(function () {
                 console.log(data);
             },
             error: function (data) {
-               alert(data);
+               
                 $("#err").html(data);
                 console.log(data);
             },
-        })
+        });
 
 
 
