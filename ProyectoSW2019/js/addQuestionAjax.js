@@ -10,12 +10,9 @@ $(document).ready(function () {
         var frm = $("#fquestion")[0];
         var em = $("#em").val();
 
-        var urrl = "addQuestionWithImage.php?email="+em;
+        var urrl = "AddQuestionWithImage.php?email="+em;
         // Create an FormData object 
          var datos = new FormData(frm);
-      
-
-
         // process the form
         $.ajax({
 

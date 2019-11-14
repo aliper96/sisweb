@@ -8,8 +8,8 @@ if ($local==1){
 }
 else{
     $server="localhost";
-    $user="id8136028_root";
+    $user="id11344150_root";
     $pass="gorkoloco";
-    $basededatos="id8136028_quiz";
+    $basededatos="id11344150_quiz";
 }
 ?>
