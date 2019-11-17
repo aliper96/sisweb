@@ -1,6 +1,5 @@
 <div id='page-wrap'>
-  <script type="text/javascript" src="../js/CountQuestionsAjax.js"></script>
-  <script type="text/javascript" src="../js/showUsers.js"></script>
+
 
   <script src="../js/jquery-3.4.1.min.js"></script>
 
@@ -57,6 +56,8 @@
       //echo "<span><a href='../xml/Questions.xml'> Ver Preguntas Xml (XSL)</a></span>";
       //echo "<span><a href='../html/GetUserInfo.html'> Get User Info</a></span>";
       echo "<span><a href='HandlingQuizesAjax.php?email=$email'>Gestionar Preguntas</a></span> ";
+      echo "<span><a href='pregunta.php?email=$email'>Preguntas Cliente</a></span> ";
+
     //  echo " Mis preguntas ";
     //  echo " <div id='preg' > </div>";
      // echo "Preguntas totales ";

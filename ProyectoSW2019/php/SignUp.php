@@ -4,6 +4,8 @@
 <head>
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../js/ShowImageInForm.js"></script>
+  <script type="text/javascript" src="../js/VerifyPassEmail.js"></script>
+
   <?php include '../html/Head.html' ?>
 </head>
 
@@ -15,7 +17,7 @@
       <h3>Introduce tus datos</h3>
       <p><span class="error">* Campo obligatorio</span></p>
       <br>
-      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+      <form id="registro"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
         ¿Eres alumno o profesor ? :
         <select name="tipo" id="nivel">
 
@@ -23,18 +25,19 @@
           <br>
           <option value="2">Profesor</option>
         </select><br><br>
-        Email*: <br><input id="email" name="email" size="75" type="text">
-        <br><br>
+        Email*: <br><input id="email" name="email" size="75" type="text"><div id="mail"></div>
+        <br>
         Nombre y Apellidos*: <br><input id="nombre" name="nombre" size="75" type="text">
         <br><br>
-        Contraseña*: <br><input id="password" name="password" size="75" type="password">
-        <br><br>
-        Repetir contraseña*: <br><input id="input_passwordr" name="passwordr" size="75" type="password">
-        <br><br>
-        <input type="file" accept="image/" name='myfiler' id="my_file"> <input type="submit" name="submit" value="Registrarse">
+        Contraseña*: <br><input id="password" name="password" size="75" type="password"><div id="pass"></div>
+        <br>
+        Repetir contraseña*: <br><input id="passwordr" name="passwordr" size="75" type="password">
+        <br>
+        <input type="file" accept="image/" name='myfiler' id="my_file"> <input type="submit" name="submit"id="Boton" value="Registrarse">
         <div id="foto" class="fotoo"><img id="ftt" src="" alt="your image" onerror="this.style.visibility='hidden'" height="140" width="150" /></div>
-
+       
       </form>
+   
 
     </div>
   </section>

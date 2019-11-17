@@ -7,6 +7,8 @@
   <script type="text/javascript" src="../js/ShowImageInForm.js"></script>
   <script type="text/javascript" src="../js/showQuestionsAjax.js"></script>
   <script type="text/javascript" src="../js/addQuestionAjax.js"></script>
+  <script type="text/javascript" src="../js/CountQuestionsAjax.js"></script>
+  <script type="text/javascript" src="../js/showUsers.js"></script>
 
   <style>
     .tabla {
