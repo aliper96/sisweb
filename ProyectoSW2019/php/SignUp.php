@@ -113,11 +113,19 @@
                      die("");
 
         }
+        $targetDir = "../uploads/";
+       $fileName = basename($_FILES["myfiler"]["name"]);
+         $targetFilePath = $targetDir . $fileName;
+         move_uploaded_file($_FILES["myfiler"]["tmp_name"], $targetFilePath);
+
         $target = addslashes(file_get_contents($_FILES['myfiler']['tmp_name']));
         move_uploaded_file($target, $_FILES['myfiler']['name']);
-
+   
+      $password = crypt($password,"sw");
+     // alert($password);
+     // echo " '$password'";
         $sql = "INSERT INTO usuarios ( email, contrasena, nya, PoA, foto) 
-        VALUES( '$email', '$password','$nombre', '$tipo', '$target')";
+        VALUES( '$email', '$password','$nombre', '$tipo', '$targetFilePath')";
 
         if ($conexion->query($sql) === TRUE) {
           alertredirect("Registro completado exitosamente.");

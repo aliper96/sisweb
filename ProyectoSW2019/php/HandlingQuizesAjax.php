@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -102,10 +105,16 @@
 </html>
 <?php
 
-if (isset($_GET['email'])) {
-  if ($_GET['email'] == "") {
+if (isset($_SESSION['email'])) {
+  if ($_SESSION['email'] == "") {
     echo '<script type="text/javascript">
         alert("Registrate o entra con tu cuenta");
+        window.location.href="Layout.php";
+        </script>';
+  }
+  if ($_SESSION['email'] == "admin@ehu.es") {
+    echo '<script type="text/javascript">
+        alert("Disponible solo para alumnos");
         window.location.href="Layout.php";
         </script>';
   }
@@ -115,4 +124,5 @@ if (isset($_GET['email'])) {
       window.location.href="Layout.php";
       </script>';
 }
+ob_end_flush ();
 ?>

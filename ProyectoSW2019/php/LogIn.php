@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -43,23 +47,56 @@ if (isset($_POST['enviar'])) {
   }
 
   function alertredirect($mensaje, $email){
-    echo "<script type='text/javascript'>alert('$mensaje'); window.location.href = 'Layout.php?email=$email'; </script>";
+    echo "<script type='text/javascript'>alert('$mensaje'); window.location.href = 'Layout.php'; </script>";
   }
 
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $password = crypt($password,"sw");
+ 
 
   require_once('DbConfig.php');
   $conexion = mysqli_connect($server, $user, $pass, $basededatos);
-  $sql = "SELECT email,contrasena FROM usuarios where email ='$email' ";
-  $result = $conexion->query($sql);
-  $row = mysqli_fetch_array($result);
-  if (($password == $row['contrasena']) && ($email == $row['email']) && (!empty($email) && !empty($password))) {
-    //alertredirect("Bienvenido " . $email . "!", $email);
-    echo "<script type='text/javascript'> window.location.href = 'IncreaseGlobalCounter.php?email=$email'; </script>";
-  } else {
-    alert("Parametros incorrectos");
-  }
+  $usuario ="SELECT contrasena  from usuarios where email ='$email'";
+  $miusuario = mysqli_fetch_array($conexion->query($usuario));
+
+  $estado = "SELECT estado FROM usuarios where email ='$email'";
+  $miestado = mysqli_fetch_array($conexion->query($estado));
+  
+  
+
+  
+      $stripped = str_replace(' ', '', $miusuario[0]);
+			if ($stripped == $password) {
+				
+        $_SESSION['email']=$email;
+      //  echo("<script>alert('$email')</script>");
+				if($email=="admin@ehu.es"){
+					
+					echo("<script>window.location = 'HandlingAccounts.php';</script>");
+				}else{
+       
+
+
+					if (str_replace(' ', '', $miestado[0]) =="bloqueado"){
+            echo("<script>alert('Usuario Bloqueado')</script>");
+            session_destroy();
+						echo("<script>window.location = 'Login.php';</script>");
+					}else{
+					//	echo("<script>alert('BIENVENIDO AL SISTEMA')</script>");
+						echo("<script>window.location = 'IncreaseGlobalCounter.php';</script>");
+					}
+					
+				}
+			}else{
+        echo("<script>alert('Parametros incorrectos')</script>");
+
+        session_destroy();
+        echo("<script>window.location = 'Login.php';</script>");
+
+      }
+            
+		
 
   $conexion->close();
 }

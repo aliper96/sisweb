@@ -1,5 +1,6 @@
 <?php
-$email = $_GET["email"];
+session_start();
+$email = $_SESSION["email"];
  function alertredirect($mensaje, $email){
     echo "<script type='text/javascript'>alert('$mensaje'); window.location.href = 'Layout.php?email=$email'; </script>";
   }
@@ -15,7 +16,7 @@ foreach ($xml->user as $user){
 if($encontrado==false){
 print_r((integer)$xml[0]["contador"]=(integer)$xml[0]["contador"]+1) ;
 $child = $xml->addChild("user");
-$child-> addChild('p',$_GET["email"]);
+$child-> addChild('p',$_SESSION["email"]);
 
 }
 

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,3 +36,20 @@
 </body>
 
 </html>
+<?php
+
+if (isset($_SESSION['email'])) {
+  if ($_SESSION['email'] == "") {
+    echo '<script type="text/javascript">
+        alert("Registrate o entra con tu cuenta");
+        window.location.href="Layout.php";
+        </script>';
+  }
+} else {
+  echo '<script type="text/javascript">
+      alert("Registrate o entra con tu cuenta");
+      window.location.href="Layout.php";
+      </script>';
+}
+
+?>
