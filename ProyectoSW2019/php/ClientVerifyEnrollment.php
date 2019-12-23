@@ -1,4 +1,5 @@
 <?php
+
 require_once('../lib/nusoap.php');
 require_once('../lib/class.wsdlcache.php');
 //creamos el objeto de tipo soapclient.
@@ -11,6 +12,5 @@ print_r($result);
 
 
 return $result;
-
 
 ?>

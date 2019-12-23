@@ -1,5 +1,12 @@
 <?php
-session_start();
+ @session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(-1);
+    
+     ob_start();
+            // echo "<script > window.location.href = 'HandlingAccounts.php'; </script>";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,8 +49,8 @@ session_start();
 
       <?php
       $email;
-      if (isset($_GET["email"])) {
-        $email = $_GET["email"];
+      if (isset($_SESSION["email"])) {
+        $email = $_SESSION["email"];
         echo "<form id='fquestion' method='post' name='fquestion' action='AddQuestionWithImage.php?email=$email' enctype='multipart/form-data'>";
         echo "<br>";
         echo "E-mail: <input id='em' type='text' name='email' size='25' value='$email' readonly>";
@@ -112,7 +119,7 @@ if (isset($_SESSION['email'])) {
         window.location.href="Layout.php";
         </script>';
   }
-  if ($_SESSION['email'] == "admin@ehu.es") {
+    if ($_SESSION['email'] == "admin@ehu.es") {
     echo '<script type="text/javascript">
         alert("Disponible solo para alumnos");
         window.location.href="Layout.php";

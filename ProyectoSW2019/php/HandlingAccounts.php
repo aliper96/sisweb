@@ -1,6 +1,4 @@
 <?php
-//header('Content-Type: image/jpeg');
-
 session_start();
 require_once('DbConfig.php');
 if(!($con = mysqli_connect($server, $user, $pass, $basededatos)))		
@@ -12,7 +10,7 @@ if(!($con = mysqli_connect($server, $user, $pass, $basededatos)))
 			echo("<script>window.location = 'Layout.php';</script>");
 		}	
 	}else{
-		 echo("<script>window.location = 'login.php';</script>");
+		 echo("<script>window.location = 'LogIn.php';</script>");
 	}
 	
 	include '../html/Head.html';
@@ -75,4 +73,19 @@ if(!($con = mysqli_connect($server, $user, $pass, $basededatos)))
 	
 	<?php
 include '../html/Footer.html' ;
-  ?>
+
+if (isset($_SESSION['email'])) {
+  if ($_SESSION['email'] == "") {
+    echo '<script type="text/javascript">
+        alert("Registrate o entra con tu cuenta");
+        window.location.href="Layout.php";
+        </script>';
+  }
+} else {
+  echo '<script type="text/javascript">
+      alert("Registrate o entra con tu cuenta");
+      window.location.href="Layout.php";
+      </script>';
+}
+//ob_end_flush ();
+?>

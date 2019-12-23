@@ -1,4 +1,5 @@
 <?php 
+session_start();
 define("API_KEY","AIzaSyAqfjsdb4ivKix2tYXt5Eyz5DzimcL26Gs") ?>
 <!DOCTYPE html>
 <html>

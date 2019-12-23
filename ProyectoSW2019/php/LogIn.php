@@ -24,6 +24,7 @@ session_start();
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         Email:*<br><input id="input_email" name="email" size="75" type="text"><br>
         Contraseña:*<br><input id="input_password" name="password" size="75" type="password"><br>
+        <a href="ChangePassword.php">Olvidado la contraseña</a>
 
 
         <br>
@@ -65,7 +66,21 @@ if (isset($_POST['enviar'])) {
   
   
 
+  //echo strlen('$miusuario[0]');
   
+ 
+
+  
+    
+ // $cont= mysqli_num_rows($usuarios); //Se verifica el total de filas devueltas
+		
+	
+     
+
+      
+
+      //echo("<script>alert('$.toJSON($usuario)')</script>");
+     // echo("<script>alert('$email')</script>");
       $stripped = str_replace(' ', '', $miusuario[0]);
 			if ($stripped == $password) {
 				
@@ -81,7 +96,7 @@ if (isset($_POST['enviar'])) {
 					if (str_replace(' ', '', $miestado[0]) =="bloqueado"){
             echo("<script>alert('Usuario Bloqueado')</script>");
             session_destroy();
-						echo("<script>window.location = 'Login.php';</script>");
+						echo("<script>window.location = 'LogIn.php';</script>");
 					}else{
 					//	echo("<script>alert('BIENVENIDO AL SISTEMA')</script>");
 						echo("<script>window.location = 'IncreaseGlobalCounter.php';</script>");
@@ -92,7 +107,7 @@ if (isset($_POST['enviar'])) {
         echo("<script>alert('Parametros incorrectos')</script>");
 
         session_destroy();
-        echo("<script>window.location = 'Login.php';</script>");
+        echo("<script>window.location = 'LogIn.php';</script>");
 
       }
             
